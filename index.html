@@ -1,0 +1,48 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Página oficial de javaNildo. Informações e contato.">
+  <meta name="theme-color" content="#0b0d12">
+  <title>javaNildo | Página oficial</title>
+  <style>
+    :root { color-scheme: dark; --bg:#0b0d12; --panel:#131722; --text:#f4f6fb; --muted:#a7afc0; --accent:#8b5cf6; --accent2:#22d3ee; }
+    * { box-sizing:border-box; }
+    body { margin:0; min-height:100vh; font-family:system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif; background:radial-gradient(ellipse at top, #20203b 0%, var(--bg) 55%); color:var(--text); display:flex; flex-direction:column; }
+    main { width:min(920px, 100% - 32px); margin:auto; padding:72px 0; }
+    .eyebrow { display:inline-flex; align-items:center; gap:8px; color:#d8ccff; border:1px solid #494064; background:#211b34; padding:8px 12px; border-radius:999px; font-size:.85rem; }
+    .dot { width:8px; height:8px; border-radius:50%; background:#a78bfa; box-shadow:0 0 12px #a78bfa; }
+    h1 { font-size:clamp(3rem, 10vw, 6.5rem); letter-spacing:-.07em; line-height:.98; margin:26px 0 18px; }
+    h1 span { background:linear-gradient(100deg, #c4b5fd, #67e8f9); -webkit-background-clip:text; background-clip:text; color:transparent; }
+    .intro { max-width:600px; color:var(--muted); font-size:clamp(1.05rem, 2.5vw, 1.25rem); line-height:1.7; }
+    .card { margin-top:38px; padding:clamp(22px, 5vw, 34px); background:rgba(19,23,34,.82); border:1px solid #292f40; border-radius:24px; box-shadow:0 24px 80px #0003; }
+    .card h2 { margin:0 0 10px; font-size:1.25rem; }
+    .card p { margin:0; color:var(--muted); line-height:1.7; }
+    .actions { display:flex; flex-wrap:wrap; gap:12px; margin-top:24px; }
+    a.button { display:inline-flex; align-items:center; justify-content:center; gap:10px; text-decoration:none; font-weight:700; padding:14px 20px; border-radius:14px; transition:transform .15s ease, opacity .15s ease; }
+    a.button:hover { transform:translateY(-2px); opacity:.92; }
+    .primary { background:linear-gradient(100deg, var(--accent), #6366f1); color:white; }
+    .secondary { color:var(--text); border:1px solid #3a4052; background:#1b2030; }
+    footer { text-align:center; color:#737d91; padding:22px 16px 30px; font-size:.85rem; }
+    @media (prefers-reduced-motion:reduce) { * { transition:none !important; } }
+  </style>
+</head>
+<body>
+  <main>
+    <div class="eyebrow"><span class="dot"></span> Página oficial</div>
+    <h1>Olá, eu sou<br><span>javaNildo.</span></h1>
+    <p class="intro">Este é meu espaço na internet. Por aqui você encontra minhas informações e pode falar comigo diretamente.</p>
+
+    <section class="card" aria-labelledby="contact-title">
+      <h2 id="contact-title">Vamos conversar?</h2>
+      <p>Entre em contato pelo WhatsApp. É só tocar no botão abaixo para iniciar uma conversa.</p>
+      <div class="actions">
+        <a class="button primary" href="https://wa.me/5511986607187" target="_blank" rel="noopener noreferrer">✆ Falar no WhatsApp</a>
+        <a class="button secondary" href="https://wa.me/5511986607187" target="_blank" rel="noopener noreferrer">11 98660-7187</a>
+      </div>
+    </section>
+  </main>
+  <footer>© <span id="year">2026</span> javaNildo · Feito com simplicidade.</footer>
+</body>
+</html>
