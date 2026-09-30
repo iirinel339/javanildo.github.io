@@ -3,9 +3,8 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta name="description" content="Página oficial de javaNildo. Informações, contato e o teste oficial de Javanildice.">
+  <meta name="description" content="Página oficial de javaNildo. Informações e contato.">
   <meta name="theme-color" content="#0b0d12">
-
   <title>javaNildo | Página oficial</title>
 
   <style>
@@ -23,16 +22,11 @@
       box-sizing:border-box;
     }
 
-    html {
-      scroll-behavior:smooth;
-    }
-
     body {
       margin:0;
       min-height:100vh;
       font-family:system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;
-      background:
-        radial-gradient(ellipse at top, #20203b 0%, var(--bg) 55%);
+      background:radial-gradient(ellipse at top, #20203b 0%, var(--bg) 55%);
       color:var(--text);
       display:flex;
       flex-direction:column;
@@ -146,7 +140,9 @@
       background:#1b2030;
     }
 
-    /* TESTE */
+    /* =========================
+       TESTE DE JAVANILDICE
+       ========================= */
 
     .quiz-card {
       margin-top:38px;
@@ -226,6 +222,11 @@
       background:#202638;
     }
 
+    .answer:disabled {
+      cursor:default;
+      opacity:.7;
+    }
+
     .reaction {
       min-height:28px;
       margin-top:20px;
@@ -274,6 +275,7 @@
 
     .restart {
       margin-top:24px;
+      justify-content:center;
     }
 
     .secret {
@@ -294,11 +296,24 @@
       animation:shake .25s infinite;
     }
 
+    /* =========================
+       FOTO
+       ========================= */
+
+    .javanildo-photo {
+      display:block;
+      max-width:100%;
+      height:auto;
+      margin:38px auto 0;
+      border-radius:16px;
+    }
+
     @keyframes appear {
       from {
         opacity:0;
         transform:translateY(15px);
       }
+
       to {
         opacity:1;
         transform:translateY(0);
@@ -321,6 +336,7 @@
     }
 
     @media (max-width:600px) {
+
       main {
         padding:42px 0;
       }
@@ -332,13 +348,16 @@
       .answer {
         padding:15px;
       }
+
     }
 
     @media (prefers-reduced-motion:reduce) {
+
       * {
         transition:none !important;
         animation:none !important;
       }
+
     }
   </style>
 </head>
@@ -346,6 +365,8 @@
 <body>
 
   <main>
+
+    <!-- CABEÇALHO -->
 
     <div class="eyebrow">
       <span class="dot"></span>
@@ -358,21 +379,22 @@
     </h1>
 
     <p class="intro">
-      Este é meu espaço na internet. Por aqui você encontra minhas informações,
-      pode falar comigo diretamente e, aparentemente, testar o quanto Javanildo
-      existe dentro de você.
+      Este é meu espaço na internet. Por aqui você encontra minhas informações
+      e pode falar comigo diretamente.
     </p>
 
 
-    <!-- CONTATO -->
+    <!-- WHATSAPP -->
 
     <section class="card" aria-labelledby="contact-title">
 
-      <h2 id="contact-title">Vamos conversar?</h2>
+      <h2 id="contact-title">
+        Vamos conversar?
+      </h2>
 
       <p>
-        Entre em contato pelo WhatsApp. É só tocar no botão abaixo para iniciar
-        uma conversa.
+        Entre em contato pelo WhatsApp. É só tocar no botão abaixo
+        para iniciar uma conversa.
       </p>
 
       <div class="actions">
@@ -400,7 +422,7 @@
     </section>
 
 
-    <!-- TESTE DE JAVANILDICE -->
+    <!-- TESTE OFICIAL DE JAVANILDICE -->
 
     <section class="card quiz-card" id="teste">
 
@@ -412,28 +434,37 @@
             🧠 Teste Oficial de Javanildice
           </div>
 
-          <div class="question-number" id="questionNumber">
+          <div
+            class="question-number"
+            id="questionNumber"
+          >
             Pergunta 1 de 10
           </div>
 
         </div>
 
+
         <div class="progress">
+
           <div
             class="progress-bar"
             id="progressBar"
           ></div>
+
         </div>
+
 
         <h2
           class="question"
           id="question"
         ></h2>
 
+
         <div
           class="answers"
           id="answers"
         ></div>
+
 
         <div
           class="reaction"
@@ -458,6 +489,7 @@
           🤡
         </div>
 
+
         <h2
           class="result-title"
           id="resultTitle"
@@ -465,15 +497,18 @@
           JAVANILDO
         </h2>
 
+
         <div
           class="score"
           id="score"
         ></div>
 
+
         <p
           class="result-message"
           id="resultMessage"
         ></p>
+
 
         <div
           class="secret"
@@ -483,6 +518,7 @@
           <br>
           <strong>O Javanildo agora é você.</strong>
         </div>
+
 
         <div class="actions restart">
 
@@ -499,12 +535,20 @@
 
     </section>
 
+
+    <!-- FOTO ORIGINAL -->
+
+    <img
+      src="copy_0B873B83-23C3-4C38-937F-5CFEC93CBF45.jpeg"
+      alt="Imagem do javaNildo"
+      class="javanildo-photo"
+    >
+
   </main>
 
 
   <footer>
-    © <span id="year">2026</span> javaNildo · Feito com simplicidade e
-    provavelmente pouca responsabilidade.
+    © <span id="year">2026</span> javaNildo · Feito com simplicidade.
   </footer>
 
 
@@ -658,19 +702,25 @@
 
     function loadQuestion() {
 
-      const question = questions[currentQuestion];
+      const question =
+        questions[currentQuestion];
+
 
       questionElement.textContent =
         question.question;
 
+
       questionNumberElement.textContent =
         `Pergunta ${currentQuestion + 1} de ${questions.length}`;
+
 
       const progress =
         (currentQuestion / questions.length) * 100;
 
+
       progressBar.style.width =
         `${progress}%`;
+
 
       answersElement.innerHTML = "";
 
@@ -682,13 +732,18 @@
         const button =
           document.createElement("button");
 
-        button.className = "answer";
+
+        button.className =
+          "answer";
+
 
         button.textContent =
           `${String.fromCharCode(65 + index)}) ${answer[0]}`;
 
-        button.onclick = () =>
-          selectAnswer(answer[1]);
+
+        button.onclick =
+          () => selectAnswer(answer[1]);
+
 
         answersElement.appendChild(button);
 
@@ -701,18 +756,27 @@
 
       totalScore += points;
 
+
       const reactions = [
+
         "Interessante escolha... 🤨",
+
         "Hmm... isso diz muita coisa sobre você.",
+
         "O Javanildo está observando. 👀",
+
         "🚨 NÍVEL DE JAVANILDICE DETECTADO 🚨"
+
       ];
+
 
       reactionElement.textContent =
         reactions[points];
 
+
       const buttons =
         document.querySelectorAll(".answer");
+
 
       buttons.forEach(button => {
         button.disabled = true;
@@ -722,6 +786,7 @@
       setTimeout(() => {
 
         currentQuestion++;
+
 
         if (currentQuestion < questions.length) {
 
@@ -740,17 +805,16 @@
 
     function showResult() {
 
-      quizElement.style.display = "none";
+      quizElement.style.display =
+        "none";
+
 
       resultElement.classList.add("show");
 
-      progressBar.style.width = "100%";
 
+      progressBar.style.width =
+        "100%";
 
-      /*
-        Pontuação máxima:
-        10 perguntas × 3 pontos = 30
-      */
 
       const percentage =
         Math.round((totalScore / 30) * 100);
@@ -762,7 +826,8 @@
 
       if (percentage <= 20) {
 
-        resultEmoji.textContent = "😇";
+        resultEmoji.textContent =
+          "😇";
 
         resultTitle.textContent =
           "AINDA HÁ ESPERANÇA";
@@ -774,7 +839,8 @@
 
       else if (percentage <= 40) {
 
-        resultEmoji.textContent = "🤨";
+        resultEmoji.textContent =
+          "🤨";
 
         resultTitle.textContent =
           "COMEÇOU A FICAR ESTRANHO";
@@ -786,7 +852,8 @@
 
       else if (percentage <= 60) {
 
-        resultEmoji.textContent = "😐";
+        resultEmoji.textContent =
+          "😐";
 
         resultTitle.textContent =
           "JAVANILDICE EM DESENVOLVIMENTO";
@@ -798,7 +865,8 @@
 
       else if (percentage <= 80) {
 
-        resultEmoji.textContent = "🤡";
+        resultEmoji.textContent =
+          "🤡";
 
         resultTitle.textContent =
           "JAVANILDO ESTÁ SE APROXIMANDO";
@@ -810,7 +878,8 @@
 
       else if (percentage < 100) {
 
-        resultEmoji.textContent = "💀";
+        resultEmoji.textContent =
+          "💀";
 
         resultTitle.textContent =
           "VOCÊ FOI LONGE DEMAIS";
@@ -822,7 +891,8 @@
 
       else {
 
-        resultEmoji.textContent = "👑";
+        resultEmoji.textContent =
+          "👑";
 
         resultTitle.textContent =
           "JAVANILDO ABSOLUTO";
@@ -834,8 +904,11 @@
 
         document.body.classList.add("chaos");
 
+
         setTimeout(() => {
+
           document.body.classList.remove("chaos");
+
         }, 2500);
 
       }
@@ -851,13 +924,15 @@
 
       resultElement.classList.remove("show");
 
-      quizElement.style.display = "block";
+      quizElement.style.display =
+        "block";
 
       secretElement.classList.remove("show");
 
       document.body.classList.remove("chaos");
 
       loadQuestion();
+
 
       document
         .getElementById("teste")
