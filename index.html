@@ -3,47 +3,879 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta name="description" content="Página oficial de javaNildo. Informações e contato.">
+  <meta name="description" content="Página oficial de javaNildo. Informações, contato e o teste oficial de Javanildice.">
   <meta name="theme-color" content="#0b0d12">
+
   <title>javaNildo | Página oficial</title>
+
   <style>
-    :root { color-scheme: dark; --bg:#0b0d12; --panel:#131722; --text:#f4f6fb; --muted:#a7afc0; --accent:#8b5cf6; --accent2:#22d3ee; }
-    * { box-sizing:border-box; }
-    body { margin:0; min-height:100vh; font-family:system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif; background:radial-gradient(ellipse at top, #20203b 0%, var(--bg) 55%); color:var(--text); display:flex; flex-direction:column; }
-    main { width:min(920px, 100% - 32px); margin:auto; padding:72px 0; }
-    .eyebrow { display:inline-flex; align-items:center; gap:8px; color:#d8ccff; border:1px solid #494064; background:#211b34; padding:8px 12px; border-radius:999px; font-size:.85rem; }
-    .dot { width:8px; height:8px; border-radius:50%; background:#a78bfa; box-shadow:0 0 12px #a78bfa; }
-    h1 { font-size:clamp(3rem, 10vw, 6.5rem); letter-spacing:-.07em; line-height:.98; margin:26px 0 18px; }
-    h1 span { background:linear-gradient(100deg, #c4b5fd, #67e8f9); -webkit-background-clip:text; background-clip:text; color:transparent; }
-    .intro { max-width:600px; color:var(--muted); font-size:clamp(1.05rem, 2.5vw, 1.25rem); line-height:1.7; }
-    .card { margin-top:38px; padding:clamp(22px, 5vw, 34px); background:rgba(19,23,34,.82); border:1px solid #292f40; border-radius:24px; box-shadow:0 24px 80px #0003; }
-    .card h2 { margin:0 0 10px; font-size:1.25rem; }
-    .card p { margin:0; color:var(--muted); line-height:1.7; }
-    .actions { display:flex; flex-wrap:wrap; gap:12px; margin-top:24px; }
-    a.button { display:inline-flex; align-items:center; justify-content:center; gap:10px; text-decoration:none; font-weight:700; padding:14px 20px; border-radius:14px; transition:transform .15s ease, opacity .15s ease; }
-    a.button:hover { transform:translateY(-2px); opacity:.92; }
-    .primary { background:linear-gradient(100deg, var(--accent), #6366f1); color:white; }
-    .secondary { color:var(--text); border:1px solid #3a4052; background:#1b2030; }
-    footer { text-align:center; color:#737d91; padding:22px 16px 30px; font-size:.85rem; }
-    @media (prefers-reduced-motion:reduce) { * { transition:none !important; } }
+    :root {
+      color-scheme: dark;
+      --bg:#0b0d12;
+      --panel:#131722;
+      --text:#f4f6fb;
+      --muted:#a7afc0;
+      --accent:#8b5cf6;
+      --accent2:#22d3ee;
+    }
+
+    * {
+      box-sizing:border-box;
+    }
+
+    html {
+      scroll-behavior:smooth;
+    }
+
+    body {
+      margin:0;
+      min-height:100vh;
+      font-family:system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;
+      background:
+        radial-gradient(ellipse at top, #20203b 0%, var(--bg) 55%);
+      color:var(--text);
+      display:flex;
+      flex-direction:column;
+    }
+
+    main {
+      width:min(920px, calc(100% - 32px));
+      margin:auto;
+      padding:72px 0;
+    }
+
+    .eyebrow {
+      display:inline-flex;
+      align-items:center;
+      gap:8px;
+      color:#d8ccff;
+      border:1px solid #494064;
+      background:#211b34;
+      padding:8px 12px;
+      border-radius:999px;
+      font-size:.85rem;
+    }
+
+    .dot {
+      width:8px;
+      height:8px;
+      border-radius:50%;
+      background:#a78bfa;
+      box-shadow:0 0 12px #a78bfa;
+    }
+
+    h1 {
+      font-size:clamp(3rem, 10vw, 6.5rem);
+      letter-spacing:-.07em;
+      line-height:.98;
+      margin:26px 0 18px;
+    }
+
+    h1 span {
+      background:linear-gradient(100deg, #c4b5fd, #67e8f9);
+      -webkit-background-clip:text;
+      background-clip:text;
+      color:transparent;
+    }
+
+    .intro {
+      max-width:600px;
+      color:var(--muted);
+      font-size:clamp(1.05rem, 2.5vw, 1.25rem);
+      line-height:1.7;
+    }
+
+    .card {
+      margin-top:38px;
+      padding:clamp(22px, 5vw, 34px);
+      background:rgba(19,23,34,.82);
+      border:1px solid #292f40;
+      border-radius:24px;
+      box-shadow:0 24px 80px #0003;
+    }
+
+    .card h2 {
+      margin:0 0 10px;
+      font-size:1.25rem;
+    }
+
+    .card p {
+      margin:0;
+      color:var(--muted);
+      line-height:1.7;
+    }
+
+    .actions {
+      display:flex;
+      flex-wrap:wrap;
+      gap:12px;
+      margin-top:24px;
+    }
+
+    a.button,
+    button.button {
+      display:inline-flex;
+      align-items:center;
+      justify-content:center;
+      gap:10px;
+      text-decoration:none;
+      font-weight:700;
+      padding:14px 20px;
+      border-radius:14px;
+      transition:transform .15s ease, opacity .15s ease;
+      cursor:pointer;
+      font-family:inherit;
+      font-size:1rem;
+    }
+
+    a.button:hover,
+    button.button:hover {
+      transform:translateY(-2px);
+      opacity:.92;
+    }
+
+    .primary {
+      background:linear-gradient(100deg, var(--accent), #6366f1);
+      color:white;
+      border:0;
+    }
+
+    .secondary {
+      color:var(--text);
+      border:1px solid #3a4052;
+      background:#1b2030;
+    }
+
+    /* TESTE */
+
+    .quiz-card {
+      margin-top:38px;
+      position:relative;
+      overflow:hidden;
+    }
+
+    .quiz-header {
+      display:flex;
+      justify-content:space-between;
+      align-items:center;
+      gap:16px;
+      margin-bottom:18px;
+    }
+
+    .quiz-label {
+      color:#c4b5fd;
+      font-weight:800;
+      font-size:.9rem;
+      text-transform:uppercase;
+      letter-spacing:.08em;
+    }
+
+    .question-number {
+      color:var(--muted);
+      font-size:.9rem;
+    }
+
+    .progress {
+      width:100%;
+      height:10px;
+      background:#242a39;
+      border-radius:999px;
+      overflow:hidden;
+      margin-bottom:28px;
+    }
+
+    .progress-bar {
+      height:100%;
+      width:0%;
+      background:linear-gradient(90deg, var(--accent), var(--accent2));
+      border-radius:999px;
+      transition:width .35s ease;
+    }
+
+    .question {
+      font-size:clamp(1.35rem, 4vw, 1.8rem);
+      line-height:1.3;
+      margin:0 0 22px;
+    }
+
+    .answers {
+      display:grid;
+      gap:12px;
+    }
+
+    .answer {
+      width:100%;
+      text-align:left;
+      padding:16px 18px;
+      background:#191e2b;
+      color:var(--text);
+      border:1px solid #303749;
+      border-radius:15px;
+      font-family:inherit;
+      font-size:1rem;
+      cursor:pointer;
+      transition:
+        transform .15s ease,
+        border-color .15s ease,
+        background .15s ease;
+    }
+
+    .answer:hover {
+      transform:translateX(4px);
+      border-color:#7561b8;
+      background:#202638;
+    }
+
+    .reaction {
+      min-height:28px;
+      margin-top:20px;
+      color:#a5f3fc;
+      font-weight:700;
+      text-align:center;
+    }
+
+    .result {
+      display:none;
+      text-align:center;
+      animation:appear .5s ease;
+    }
+
+    .result.show {
+      display:block;
+    }
+
+    .result-emoji {
+      font-size:4.5rem;
+      margin-bottom:10px;
+    }
+
+    .result-title {
+      font-size:clamp(2rem, 8vw, 3.5rem);
+      line-height:1;
+      margin:10px 0 16px;
+      background:linear-gradient(100deg,#c4b5fd,#67e8f9);
+      -webkit-background-clip:text;
+      background-clip:text;
+      color:transparent;
+    }
+
+    .score {
+      font-size:1.3rem;
+      font-weight:800;
+      margin-bottom:12px;
+    }
+
+    .result-message {
+      color:var(--muted);
+      line-height:1.7;
+      max-width:600px;
+      margin:0 auto;
+    }
+
+    .restart {
+      margin-top:24px;
+    }
+
+    .secret {
+      margin-top:18px;
+      padding:14px;
+      border:1px dashed #6d5ca8;
+      border-radius:14px;
+      color:#ddd6fe;
+      background:#211b34;
+      display:none;
+    }
+
+    .secret.show {
+      display:block;
+    }
+
+    .chaos {
+      animation:shake .25s infinite;
+    }
+
+    @keyframes appear {
+      from {
+        opacity:0;
+        transform:translateY(15px);
+      }
+      to {
+        opacity:1;
+        transform:translateY(0);
+      }
+    }
+
+    @keyframes shake {
+      0% { transform:translate(0); }
+      25% { transform:translate(2px,-2px); }
+      50% { transform:translate(-2px,2px); }
+      75% { transform:translate(2px,2px); }
+      100% { transform:translate(-2px,-2px); }
+    }
+
+    footer {
+      text-align:center;
+      color:#737d91;
+      padding:22px 16px 30px;
+      font-size:.85rem;
+    }
+
+    @media (max-width:600px) {
+      main {
+        padding:42px 0;
+      }
+
+      .quiz-header {
+        align-items:flex-start;
+      }
+
+      .answer {
+        padding:15px;
+      }
+    }
+
+    @media (prefers-reduced-motion:reduce) {
+      * {
+        transition:none !important;
+        animation:none !important;
+      }
+    }
   </style>
 </head>
+
 <body>
+
   <main>
-    <div class="eyebrow"><span class="dot"></span> Página oficial</div>
-    <h1>Olá, eu sou<br><span>javaNildo.</span></h1>
-    <p class="intro">Este é meu espaço na internet. Por aqui você encontra minhas informações e pode falar comigo diretamente.</p>
+
+    <div class="eyebrow">
+      <span class="dot"></span>
+      Página oficial
+    </div>
+
+    <h1>
+      Olá, eu sou<br>
+      <span>javaNildo.</span>
+    </h1>
+
+    <p class="intro">
+      Este é meu espaço na internet. Por aqui você encontra minhas informações,
+      pode falar comigo diretamente e, aparentemente, testar o quanto Javanildo
+      existe dentro de você.
+    </p>
+
+
+    <!-- CONTATO -->
 
     <section class="card" aria-labelledby="contact-title">
+
       <h2 id="contact-title">Vamos conversar?</h2>
-      <p>Entre em contato pelo WhatsApp. É só tocar no botão abaixo para iniciar uma conversa.</p>
+
+      <p>
+        Entre em contato pelo WhatsApp. É só tocar no botão abaixo para iniciar
+        uma conversa.
+      </p>
+
       <div class="actions">
-        <a class="button primary" href="https://wa.me/5511986607187" target="_blank" rel="noopener noreferrer">✆ Falar no WhatsApp</a>
-        <a class="button secondary" href="https://wa.me/5511986607187" target="_blank" rel="noopener noreferrer">11 98660-7187</a>
+
+        <a
+          class="button primary"
+          href="https://wa.me/5511986607187"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          ✆ Falar no WhatsApp
+        </a>
+
+        <a
+          class="button secondary"
+          href="https://wa.me/5511986607187"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          11 98660-7187
+        </a>
+
       </div>
+
     </section>
+
+
+    <!-- TESTE DE JAVANILDICE -->
+
+    <section class="card quiz-card" id="teste">
+
+      <div id="quiz">
+
+        <div class="quiz-header">
+
+          <div class="quiz-label">
+            🧠 Teste Oficial de Javanildice
+          </div>
+
+          <div class="question-number" id="questionNumber">
+            Pergunta 1 de 10
+          </div>
+
+        </div>
+
+        <div class="progress">
+          <div
+            class="progress-bar"
+            id="progressBar"
+          ></div>
+        </div>
+
+        <h2
+          class="question"
+          id="question"
+        ></h2>
+
+        <div
+          class="answers"
+          id="answers"
+        ></div>
+
+        <div
+          class="reaction"
+          id="reaction"
+          aria-live="polite"
+        ></div>
+
+      </div>
+
+
+      <!-- RESULTADO -->
+
+      <div
+        class="result"
+        id="result"
+      >
+
+        <div
+          class="result-emoji"
+          id="resultEmoji"
+        >
+          🤡
+        </div>
+
+        <h2
+          class="result-title"
+          id="resultTitle"
+        >
+          JAVANILDO
+        </h2>
+
+        <div
+          class="score"
+          id="score"
+        ></div>
+
+        <p
+          class="result-message"
+          id="resultMessage"
+        ></p>
+
+        <div
+          class="secret"
+          id="secret"
+        >
+          🔒 Você desbloqueou o nível secreto de Javanildice.
+          <br>
+          <strong>O Javanildo agora é você.</strong>
+        </div>
+
+        <div class="actions restart">
+
+          <button
+            class="button primary"
+            onclick="restartQuiz()"
+          >
+            🔄 Fazer o teste novamente
+          </button>
+
+        </div>
+
+      </div>
+
+    </section>
+
   </main>
-  <footer>© <span id="year">2026</span> javaNildo · Feito com simplicidade.</footer>
-<img src="copy_0B873B83-23C3-4C38-937F-5CFEC93CBF45.jpeg" alt="Imagem do javaNildo" style="max-width:100%; height:auto; border-radius:16px;">
+
+
+  <footer>
+    © <span id="year">2026</span> javaNildo · Feito com simplicidade e
+    provavelmente pouca responsabilidade.
+  </footer>
+
+
+  <script>
+
+    const questions = [
+
+      {
+        question: "Você vê o Javanildo chegando. O que faz?",
+        answers: [
+          ["Finge que não viu", 0],
+          ["Corre", 1],
+          ["Dá bom dia", 2],
+          ["Pede dinheiro", 3]
+        ]
+      },
+
+      {
+        question: "Javanildo fala: \"É rapidinho\". Você acredita?",
+        answers: [
+          ["Sim, confio nele", 0],
+          ["Jamais", 1],
+          ["Já caí nessa antes", 3],
+          ["Depende do Javanildo", 2]
+        ]
+      },
+
+      {
+        question: "Qual é o seu nível de confiança no Javanildo?",
+        answers: [
+          ["100%", 0],
+          ["50%", 1],
+          ["0%", 3],
+          ["Confiança? O que é isso?", 2]
+        ]
+      },
+
+      {
+        question: "Você encontra uma porta escrito: \"NÃO ABRA\".",
+        answers: [
+          ["Não abro", 0],
+          ["Abro devagar", 1],
+          ["Chamo o Javanildo", 2],
+          ["Já abri", 3]
+        ]
+      },
+
+      {
+        question: "Javanildo manda mensagem: \"Precisamos conversar\". Você:",
+        answers: [
+          ["Responde imediatamente", 0],
+          ["Finge que não recebeu", 1],
+          ["Desliga o celular", 2],
+          ["Troca de número", 3]
+        ]
+      },
+
+      {
+        question: "Você ganhou R$ 10.000, mas o Javanildo pede R$ 9.999 emprestado.",
+        answers: [
+          ["Empresto", 3],
+          ["Pergunto quando devolve", 2],
+          ["Dou só R$ 5", 1],
+          ["Bloqueio na hora", 0]
+        ]
+      },
+
+      {
+        question: "Qual dessas frases parece mais perigosa?",
+        answers: [
+          ["Bom dia", 0],
+          ["Tenho uma ideia", 1],
+          ["Confia em mim", 2],
+          ["É rapidinho", 3]
+        ]
+      },
+
+      {
+        question: "Você descobre que Javanildo está organizando uma festa.",
+        answers: [
+          ["Vou embora", 0],
+          ["Pergunto o horário", 1],
+          ["Vou", 2],
+          ["Sou o DJ", 3]
+        ]
+      },
+
+      {
+        question: "Javanildo diz: \"Não vai dar problema\".",
+        answers: [
+          ["Acredito", 3],
+          ["Fico desconfiado", 2],
+          ["Vou embora", 1],
+          ["Já sei que vai dar problema", 0]
+        ]
+      },
+
+      {
+        question: "Última pergunta. Quem é Javanildo?",
+        answers: [
+          ["Uma pessoa normal", 0],
+          ["Um ser misterioso", 1],
+          ["Uma ameaça à sociedade", 2],
+          ["EU SOU JAVANILDO", 3]
+        ]
+      }
+
+    ];
+
+
+    let currentQuestion = 0;
+    let totalScore = 0;
+
+
+    const questionElement =
+      document.getElementById("question");
+
+    const answersElement =
+      document.getElementById("answers");
+
+    const questionNumberElement =
+      document.getElementById("questionNumber");
+
+    const progressBar =
+      document.getElementById("progressBar");
+
+    const reactionElement =
+      document.getElementById("reaction");
+
+    const quizElement =
+      document.getElementById("quiz");
+
+    const resultElement =
+      document.getElementById("result");
+
+    const resultTitle =
+      document.getElementById("resultTitle");
+
+    const resultEmoji =
+      document.getElementById("resultEmoji");
+
+    const resultScore =
+      document.getElementById("score");
+
+    const resultMessage =
+      document.getElementById("resultMessage");
+
+    const secretElement =
+      document.getElementById("secret");
+
+
+    function loadQuestion() {
+
+      const question = questions[currentQuestion];
+
+      questionElement.textContent =
+        question.question;
+
+      questionNumberElement.textContent =
+        `Pergunta ${currentQuestion + 1} de ${questions.length}`;
+
+      const progress =
+        (currentQuestion / questions.length) * 100;
+
+      progressBar.style.width =
+        `${progress}%`;
+
+      answersElement.innerHTML = "";
+
+      reactionElement.textContent = "";
+
+
+      question.answers.forEach((answer, index) => {
+
+        const button =
+          document.createElement("button");
+
+        button.className = "answer";
+
+        button.textContent =
+          `${String.fromCharCode(65 + index)}) ${answer[0]}`;
+
+        button.onclick = () =>
+          selectAnswer(answer[1]);
+
+        answersElement.appendChild(button);
+
+      });
+
+    }
+
+
+    function selectAnswer(points) {
+
+      totalScore += points;
+
+      const reactions = [
+        "Interessante escolha... 🤨",
+        "Hmm... isso diz muita coisa sobre você.",
+        "O Javanildo está observando. 👀",
+        "🚨 NÍVEL DE JAVANILDICE DETECTADO 🚨"
+      ];
+
+      reactionElement.textContent =
+        reactions[points];
+
+      const buttons =
+        document.querySelectorAll(".answer");
+
+      buttons.forEach(button => {
+        button.disabled = true;
+      });
+
+
+      setTimeout(() => {
+
+        currentQuestion++;
+
+        if (currentQuestion < questions.length) {
+
+          loadQuestion();
+
+        } else {
+
+          showResult();
+
+        }
+
+      }, 650);
+
+    }
+
+
+    function showResult() {
+
+      quizElement.style.display = "none";
+
+      resultElement.classList.add("show");
+
+      progressBar.style.width = "100%";
+
+
+      /*
+        Pontuação máxima:
+        10 perguntas × 3 pontos = 30
+      */
+
+      const percentage =
+        Math.round((totalScore / 30) * 100);
+
+
+      resultScore.textContent =
+        `Javanildice: ${percentage}%`;
+
+
+      if (percentage <= 20) {
+
+        resultEmoji.textContent = "😇";
+
+        resultTitle.textContent =
+          "AINDA HÁ ESPERANÇA";
+
+        resultMessage.textContent =
+          "Você conseguiu escapar da influência do Javanildo. Por enquanto. Continue assim e talvez exista salvação.";
+
+      }
+
+      else if (percentage <= 40) {
+
+        resultEmoji.textContent = "🤨";
+
+        resultTitle.textContent =
+          "COMEÇOU A FICAR ESTRANHO";
+
+        resultMessage.textContent =
+          "Você ainda parece uma pessoa normal, mas algumas escolhas levantaram suspeitas.";
+
+      }
+
+      else if (percentage <= 60) {
+
+        resultEmoji.textContent = "😐";
+
+        resultTitle.textContent =
+          "JAVANILDICE EM DESENVOLVIMENTO";
+
+        resultMessage.textContent =
+          "O Javanildo já está começando a ocupar espaço na sua mente. Talvez seja tarde demais.";
+
+      }
+
+      else if (percentage <= 80) {
+
+        resultEmoji.textContent = "🤡";
+
+        resultTitle.textContent =
+          "JAVANILDO ESTÁ SE APROXIMANDO";
+
+        resultMessage.textContent =
+          "Seu nível de Javanildice está preocupante. Você provavelmente já falou 'é rapidinho' para alguém.";
+
+      }
+
+      else if (percentage < 100) {
+
+        resultEmoji.textContent = "💀";
+
+        resultTitle.textContent =
+          "VOCÊ FOI LONGE DEMAIS";
+
+        resultMessage.textContent =
+          "Não existe mais volta. O Javanildo já conhece você pelo nome.";
+
+      }
+
+      else {
+
+        resultEmoji.textContent = "👑";
+
+        resultTitle.textContent =
+          "JAVANILDO ABSOLUTO";
+
+        resultMessage.textContent =
+          "Você atingiu o nível máximo. Não existe mais diferença entre você e o próprio Javanildo.";
+
+        secretElement.classList.add("show");
+
+        document.body.classList.add("chaos");
+
+        setTimeout(() => {
+          document.body.classList.remove("chaos");
+        }, 2500);
+
+      }
+
+    }
+
+
+    function restartQuiz() {
+
+      currentQuestion = 0;
+
+      totalScore = 0;
+
+      resultElement.classList.remove("show");
+
+      quizElement.style.display = "block";
+
+      secretElement.classList.remove("show");
+
+      document.body.classList.remove("chaos");
+
+      loadQuestion();
+
+      document
+        .getElementById("teste")
+        .scrollIntoView({
+          behavior:"smooth",
+          block:"center"
+        });
+
+    }
+
+
+    document.getElementById("year").textContent =
+      new Date().getFullYear();
+
+
+    loadQuestion();
+
+  </script>
+
 </body>
 </html>
